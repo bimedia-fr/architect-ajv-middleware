@@ -1,2 +1,38 @@
 # architect-ajv-middleware
-architect connect ajv middleware
+
+This architect plugin register a middleware to check that the request data matches an AJV schema.
+
+The json schema must be specified in the route spec in the `validation` attribute:
+
+```js
+rest.get({
+    url: '/',
+    validation: ajvSchema
+},
+(req, res) => {
+    // ...
+});
+```
+
+### Installation
+
+```sh
+npm install --save architect-ajv-middleware
+```
+### Config Format
+```js
+{
+  "packagePath": "architect-ajv-middleware",
+  "ajv": {
+    allErrors: true,
+    coerceTypes: true,
+    useDefaults: true,
+    removeAdditional: true
+  },
+  "http": {
+    statusCode: 422,
+    code: 'UnprocessableEntity'
+  }
+}
+}
+```

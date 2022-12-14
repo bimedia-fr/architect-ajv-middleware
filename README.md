@@ -13,6 +13,7 @@ rest.get({
     // ...
 });
 ```
+The `title` attribute on the json schema must be set to unable ajv validator cache.
 
 ### Installation
 

@@ -1,0 +1,29 @@
+{
+  "name": "architect-ajv-middleware",
+  "version": "1.0.0",
+  "description": "architect plugin to provide and configure ajv connect middleware.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bimedia-fr/architect-ajv-middleware.git"
+  },
+  "keywords": [
+    "architect",
+    "ajv",
+    "connect"
+  ],
+  "author": "jerome creignou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bimedia-fr/architect-ajv-middleware/issues"
+  },
+  "homepage": "https://github.com/bimedia-fr/architect-ajv-middleware#readme",
+  "dependencies": {
+    "ajv": "^8.11.2",
+    "ajv-errors": "^3.0.0",
+    "ajv-formats": "^2.1.1"
+  }
+}

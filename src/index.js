@@ -27,12 +27,12 @@ module.exports = function (options, imports, register) {
 
     function getValidator(req, schema) {
         let path = req.route.spec && req.route.spec.path;
-        let title = schema.title;
-        if (!path && !title) {
+        let id = schema.$id || schema.title;
+        if (!path && !id) {
             // we can't reliably build a suitable cache key, cache is disabled
             return ajv.compile(schema);
         }
-        let key = [req.method, path, title].join('|');
+        let key = [req.method, path, id].join('|');
         if (validators[key]) {
             return validators[key];
         }

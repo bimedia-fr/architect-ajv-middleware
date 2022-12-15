@@ -35,5 +35,4 @@ npm install --save architect-ajv-middleware
     code: 'UnprocessableEntity'
   }
 }
-}
 ```

@@ -51,7 +51,7 @@ module.exports = function (options, imports, register) {
             return next();
         }
         let validator = getValidator(req, schema);
-        const valid = validator.validate({
+        const valid = validator({
             path: req.params, // path params
             body: req.body // body params
         });

@@ -58,14 +58,16 @@ module.exports = function (options, imports, register) {
         if (valid) {
             return next();
         }
+
+        // Return Error in response
         if (req.accepts('application/json')) {
             res.set('Content-Type', 'application/json; charset=utf-8');
         }
-        log.info('requete non valide:', ajv.errors.map(e => e.message).join(','), ajv.errors);
+        log.info('requete non valide:', validator.errors.map(e => e.message).join(','), validator.errors);
         return res.send(http.statusCode, {
             code: http.code,
-            message: ajv.errors.map(e => e.message).join(','),
-            errors: ajv.errors
+            message: validator.errors.map(e => e.message).join(','),
+            errors: validator.errors
         });
     }
     rest.use(middleware);

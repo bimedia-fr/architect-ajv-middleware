@@ -15,6 +15,7 @@ module.exports = function (options, imports, register) {
     }, options.http);
 
     require('ajv-errors')(ajv);
+    require("ajv-keywords")(ajv);
     require('ajv-formats').default(ajv);
     let rest = imports.rest;
     let log = imports.log.getLogger('validation');

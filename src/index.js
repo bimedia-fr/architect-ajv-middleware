@@ -54,7 +54,9 @@ module.exports = function (options, imports, register) {
         let validator = getValidator(req, schema);
         const valid = validator({
             path: req.params, // path params
-            body: req.body // body params
+            body: req.body, // body params
+            query: req.query, // query params
+            headers: req.headers // headers
         });
         if (valid) {
             return next();
